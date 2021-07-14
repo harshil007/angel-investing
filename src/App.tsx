@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import ApplicationHeader from "./ApplicationHeader";
 import Dashboard from "./Dashboard";
@@ -14,14 +14,13 @@ const userDefaultContext = {
 export const UserContext = React.createContext(userDefaultContext);
 
 function App() {
-  const [ledgerType, setLedgerType] = useState("complicated");
   return (
     <ErrorBoundary>
       <Router>
         <div className="layout">
           <ApplicationHeader />
           <div className="layout-content">
-            <UserContext.Provider value={{ ...userDefaultContext, ledgerType }}>
+            <UserContext.Provider value={{ ...userDefaultContext }}>
               <Dashboard />
             </UserContext.Provider>
           </div>
