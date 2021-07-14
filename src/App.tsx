@@ -1,25 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import ApplicationHeader from "./ApplicationHeader";
+import Dashboard from "./Dashboard";
+import ErrorBoundary from "./ErrorBoundary";
+import "./styles/layout.css";
+
+const userDefaultContext = {
+  id: 76510190788,
+  name: "Michael Daugherty",
+  ledgerType: "complicated",
+};
+
+export const UserContext = React.createContext(userDefaultContext);
 
 function App() {
+  const [ledgerType, setLedgerType] = useState("complicated");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ErrorBoundary>
+      <Router>
+        <div className="layout">
+          <ApplicationHeader />
+          <div className="layout-content">
+            <UserContext.Provider value={{ ...userDefaultContext, ledgerType }}>
+              <Dashboard />
+            </UserContext.Provider>
+          </div>
+        </div>
+      </Router>
+    </ErrorBoundary>
   );
 }
 

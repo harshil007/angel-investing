@@ -1,0 +1,116 @@
+.layout {
+  display: flex;
+  flex: auto;
+  flex-direction: column;
+  background: #f0f2f5;
+}
+
+.layout,
+.layout * {
+  box-sizing: border-box;
+}
+
+.layout-header {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 64px;
+  padding: 0 30px;
+  color: #ffffff;
+  background: #001529;
+  line-height: 64px;
+  display: flex;
+  flex: 0 0 auto;
+}
+
+.layout-content {
+  padding: 0px 30px;
+  margin-top: 64px;
+  flex: auto;
+  min-height: 0;
+  height: calc(100vh - 64px);
+}
+
+.ledger-summary-card {
+  margin: 20px 0;
+  display: flex;
+}
+
+.content-card {
+  padding: 24px;
+  height: 77vh;
+  background: #ffffff;
+}
+
+.label-text {
+  margin-bottom: 4px;
+  color: #00000073;
+}
+
+.heading1 {
+  font-size: 24px;
+  color: #000000d9;
+  font-weight: bold;
+}
+
+.heading2 {
+  font-size: 20px;
+  color: #000000d9;
+}
+
+.secondary-text {
+  color: #00000073;
+}
+
+.ledger-table tbody {
+  display: block;
+  height: 500px;
+  overflow: auto;
+}
+.ledger-table thead,
+tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed; /* even columns width , fix width of table too*/
+}
+
+.ledger-table {
+  margin-top: 20px;
+  border-collapse: collapse;
+  text-align: left;
+  width: 100%;
+  padding: 10px;
+  color: #000000d9;
+}
+
+.ledger-table th {
+  color: #00000073;
+  padding: 15px 5px;
+}
+
+.ledger-table td {
+  padding: 15px 5px;
+}
+
+.ledger-table tr {
+  border-bottom: 1px solid #00000073;
+  padding: 15px 5px;
+}
+
+.positiveAmount {
+  color: #3f8601;
+}
+
+.negativeAmount {
+  color: #cf1322;
+}
+
+.menu-item {
+  margin-left: 40px;
+  padding: 0px 10px;
+  cursor: pointer;
+}
+
+.menu-item-active {
+  background-color: #1890ff;
+}
